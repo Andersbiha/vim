@@ -29,6 +29,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'severin-lemaignan/vim-minimap'
 " Improved PHP syntax highlighting
 Plugin 'StanAngeloff/php.vim'
+Plugin 'groenewege/vim-less'
 " Dockerfile syntax highlighting
 Plugin 'ekalinin/Dockerfile.vim'
 " Faster navigation by keyboard
@@ -40,6 +41,7 @@ Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 " Autoclose brackets
 Plugin 'cohama/lexima.vim'
+Plugin 'ap/vim-css-color'
 call vundle#end()
 
 "############################### Default config #################################
@@ -107,6 +109,9 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
    " Treat .md files as Markdown
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+
+   " Treat .less as less
+   autocmd BufNewFile,BufRead *.less setlocal filetype=less
 endif
 
 " Make sure files uses real tabs, not spaces
@@ -179,6 +184,9 @@ nmap s <Plug>(easymotion-s)
 
 " Toggle easymotion plugin double letter search
 nmap ss <Plug>(easymotion-s2)
+
+" Open all folds
+nmap zo :set foldlevel=99<CR>
 
 " Faster fold creation
 vnoremap <Space><Space> zf
