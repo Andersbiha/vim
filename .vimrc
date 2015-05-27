@@ -144,8 +144,10 @@ set foldmethod=syntax
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+ augroup END
 
+
+let g:fuf_fuzzyRefining = 1
 "########################## Movement / Keybindings  #############################
 
 " Allow cursor keys in insert mode
@@ -177,7 +179,7 @@ map <leader><Down> :tabprev<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Toggle FuzzyFinder plugin
-map <C-p> :FufFile<CR>
+map <C-p> :FufFile **/<CR>
 
 " Toggle easymotion plugin single letter search
 nmap s <Plug>(easymotion-s)
