@@ -42,6 +42,8 @@ Plugin 'xolox/vim-misc'
 " Autoclose brackets
 Plugin 'cohama/lexima.vim'
 Plugin 'ap/vim-css-color'
+" Easier commenting
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()
 
 "############################### Default config #################################
