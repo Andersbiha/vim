@@ -250,7 +250,8 @@ let g:lightline = {
 \	'separator': { 'left': '', 'right': '' },
 \	'subseparator': { 'left': '', 'right': '' }
 \}
-set guifont=Menlo\ For\ Powerline
+set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+"set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline
 
 "############################### Search Config  #################################
 
