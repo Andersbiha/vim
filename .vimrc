@@ -44,6 +44,8 @@ Plugin 'cohama/lexima.vim'
 Plugin 'ap/vim-css-color'
 " Easier commenting
 Plugin 'scrooloose/nerdcommenter'
+" Emmet HTML / Css abbreviations
+Plugin 'mattn/emmet-vim'
 call vundle#end()
 
 "############################### Default config #################################
@@ -76,6 +78,7 @@ endif
 
 " Don’t show the intro message when starting Vim
 set shortmess=atI
+let g:session_autoload = 'no'  
 
 " Disable error bells
 set noerrorbells
@@ -101,9 +104,6 @@ set nostartofline
 set exrc
 set secure
 
-" Enable autoindentation
-set autoindent
-
 if has("autocmd")
    " Enable file type detection
     filetype on
@@ -111,7 +111,6 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
    " Treat .md files as Markdown
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-
    " Treat .less as less
    autocmd BufNewFile,BufRead *.less setlocal filetype=less
 endif
@@ -209,6 +208,7 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 nnoremap <CR> G
 
+
 "################################# Appearance ###################################
 
 " Enable powerline fonts
@@ -241,6 +241,9 @@ set title
 
 " Show the (partial) command as it’s being typed
 set showcmd
+
+" Set the default height of the cmd line
+set cmdheight=3
 
 " Configuration for ligtline bottom bar
 let g:lightline = {
@@ -282,6 +285,10 @@ let g:EasyMotion_smartcase = 1
 let g:UltiSnipsExpandTrigger="<leader><leader>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><tab>"
+
+" Emmet plugin config
+" Rebind expand key
+let g:user_emmet_expandabbr_key = '<Tab>'
 
 " Session plugin config
 " Save vim sessions periodicly
